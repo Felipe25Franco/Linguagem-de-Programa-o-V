@@ -1,0 +1,8 @@
+package org.example.EscritorioAdvocacia;
+
+public interface Cliente {
+
+    String emitir();
+    Processo novoProcesso();
+
+} 
