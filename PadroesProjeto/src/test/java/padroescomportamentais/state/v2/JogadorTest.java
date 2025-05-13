@@ -18,4 +18,22 @@ public class JogadorTest {
         assertTrue(jogador.emprestar());
         assertEquals(JogadorEstadoEmprestado.getInstance(), jogador.getEstado());
     }
+
+    @Test
+    public void deveVenderJogadorContratado() {
+
+    }
+
+    @Test
+    public void deveConvocarJogadorContratado() {
+
+    }
+
+
+    // Jogador Livre
+
+    @Test
+    public void deveContratarJogadorLivre() {
+
+    }
 }
