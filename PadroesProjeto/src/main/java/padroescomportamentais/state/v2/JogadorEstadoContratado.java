@@ -10,4 +10,18 @@ public class JogadorEstadoContratado extends JogadorEstado{
         jogador.setEstado(JogadorEstadoEmprestado.getInstance());
         return true;
     }
+    public boolean vender(Jogador jogador) {
+        jogador.setEstado(JogadorEstadoVendido.getInstance());
+        return true;
+    }
+
+    public boolean convocar(Jogador jogador) {
+        jogador.setEstado(JogadorEstadoConvocado.getInstance());
+        return true;
+    }
+
+    public boolean livre(Jogador jogador) {
+        jogador.setEstado(JogadorEstadoLivre.getInstance());
+        return true;
+    }
 }
