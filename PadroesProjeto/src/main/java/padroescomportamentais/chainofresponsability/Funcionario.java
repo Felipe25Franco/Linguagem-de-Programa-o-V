@@ -16,6 +16,19 @@ public abstract class Funcionario {
 
     public abstract String getDescricaoCargo();
 
-
+    public String assinarDocumento(Documento documento) {
+        if (listaDocumentos.contains(documento.getTipoDocumento())) {
+            return getDescricaoCargo();
+        }
+        else {
+            if (funcionarioSuperior != null) {
+                return funcionarioSuperior.assinarDocumento(documento);
+            }
+            else
+            {
+                return "Sem assinatura";
+            }
+        }
+    }
 
 }
