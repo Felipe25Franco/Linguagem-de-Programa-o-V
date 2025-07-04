@@ -1,34 +1,28 @@
 package padroescomportamentais.chainofresponsability;
-
 import java.util.ArrayList;
-
 public abstract class Funcionario {
-    protected ArrayList listaDocumentos = new ArrayList();
-    private Funcionario funcionarioSuperior;
+    protected ArrayList listaAcessos = new ArrayList();
+    private Funcionario superior;
 
-    public Funcionario getFuncionarioSuperior() {
-        return funcionarioSuperior;
+    public Funcionario getSuperior() {
+        return superior;
     }
 
-    public void setFuncionarioSuperior(Funcionario funcionarioSuperior) {
-        this.funcionarioSuperior = funcionarioSuperior;
+    public void setSuperior(Funcionario superior) {
+        this.superior = superior;
     }
 
     public abstract String getDescricaoCargo();
 
-    public String assinarDocumento(Documento documento) {
-        if (listaDocumentos.contains(documento.getTipoDocumento())) {
+    public String autorizarAcesso(Acesso acesso) {
+        if (listaAcessos.contains(acesso.getTipoAcesso())) {
             return getDescricaoCargo();
-        }
-        else {
-            if (funcionarioSuperior != null) {
-                return funcionarioSuperior.assinarDocumento(documento);
-            }
-            else
-            {
-                return "Sem assinatura";
+        } else {
+            if (superior != null) {
+                return superior.autorizarAcesso(acesso);
+            } else {
+                return "Acesso negado";
             }
         }
     }
-
 }
