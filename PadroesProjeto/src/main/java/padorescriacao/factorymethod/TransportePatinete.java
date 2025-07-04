@@ -1,5 +1,5 @@
 package padorescriacao.factorymethod;
-public class TransportePatinete {
+public class TransportePatinete{
     public String entregar() {
         return "Entrega realizada por patinete";
     }

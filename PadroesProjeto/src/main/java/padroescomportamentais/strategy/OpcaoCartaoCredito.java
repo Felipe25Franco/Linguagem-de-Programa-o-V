@@ -13,8 +13,7 @@ public class OpcaoCartaoCredito implements OpcaoPagamento {
     @Override
     public double pagar(double valor) {
         double valorParcela = valor / numeroParcelas;
-        System.out.println("Pagamento de R$" + valor + " realizado com Cartão de Crédito.");
-        System.out.println("Valor parcelado em " + numeroParcelas + " vezes de R$" + valorParcela);
+
         return valor;
     }
 }

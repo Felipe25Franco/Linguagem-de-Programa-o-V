@@ -5,7 +5,7 @@ public class TransporteFactory {
         Class classe = null;
         Object objeto = null;
         try {
-            classe = Class.forName("Transporte" + transporte);
+            classe = Class.forName("padorescriacao.factorymethod.Transporte" + transporte);
             objeto = classe.newInstance();
         } catch (Exception ex) {
             throw new IllegalArgumentException("Transporte inexistente");
